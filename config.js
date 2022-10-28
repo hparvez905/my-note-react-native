@@ -1,0 +1,1 @@
+import { ReactNativeFirebase } from "@react-native-firebase/app";
