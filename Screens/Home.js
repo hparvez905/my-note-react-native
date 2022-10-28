@@ -70,7 +70,7 @@ const Home = () => {
     }
     return (
         <View style={{flex:1}}>
-            <View style={Styles.formContainer}>
+            <View style={styles.formContainer}>
                 <TextInput
                 style={styles.input}
                 placeholder='Add new note'
@@ -105,7 +105,7 @@ const Home = () => {
                         />
                         <View style={styles.innerContainer}>
                             <Text style={styles.itemHeading}>
-                                {item.heading[0].touppercase()+ item.heading.slice(1)}
+                                {item.heading[0].toUpperCase()+ item.heading.slice(1)}
 
                             </Text>
 
@@ -153,7 +153,9 @@ const styles= StyleSheet.create({
         height:80,
         marginLeft:10,
         marginRight:10,
-        marginTop:10,
+        marginTop:50,
+        alignItems:'center',
+        justifyContent:'center'
     },
     input:{
         height:48,
