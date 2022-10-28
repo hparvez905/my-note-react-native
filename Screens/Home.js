@@ -1,7 +1,7 @@
 import { View, Text,FlatList,StyleSheet,TextInput,TouchableOpacity,Keyboard, Pressable } from 'react-native';
 import React,{useState,useEffect} from 'react';
 import {firebase} from '../config';
-import {FontAwesome} from 'react-native-vector-icons';
+import {FontAwesome,Ionicons} from 'react-native-vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -81,8 +81,10 @@ const Home = () => {
                 autoCapitalize='none'
 
                 />
-                <TouchableOpacity style={styles.button} onPress={addNote}>
-                    <Text style={styles.button}>Add Note</Text>
+                <TouchableOpacity style={styles.floatingButton} onPress={addNote}>
+                    <Ionicons name="add-circle" size={50} color='red'
+                    />
+                    
 
                 </TouchableOpacity>
 
@@ -166,22 +168,9 @@ const styles= StyleSheet.create({
         flex:1,
         marginRight:5,
     },
-    button:{
-        height:47,
-        borderRadius:5,
-        backgroundColor:'#788eec',
-        width:80,
-        alignItems:'center',
-        justifyContent:'center'
-    },
-    buttonText:{
-        color:'white',
-        fontSize:20,
-
-    },
     noteIcon:{
         marginTop:5,
-        fontSize:20,
+        fontSize:25,
         marginLeft:14
     }
 })
