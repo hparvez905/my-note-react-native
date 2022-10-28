@@ -3,7 +3,7 @@ import React ,{useState} from 'react';
 import {firebase} from '../config';
 import { useNavigation } from '@react-navigation/native';
 
-const Detail = (route) => {
+const Detail = ({route}) => {
     const notesRef =firebase.firestore().collection('notes');
     const  [textHeading, onChangeHeadingText] =useState(route.params.item.name);
     const navigation =useNavigation();
