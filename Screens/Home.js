@@ -1,8 +1,9 @@
-import { View, Text,FlatList,StyleSheet,TextInput,TouchableOpacity,Keyboard} from 'react-native';
+import { View, Text,FlatList,StyleSheet,TextInput,TouchableOpacity,Keyboard, Pressable } from 'react-native';
 import React,{useState,useEffect} from 'react';
 import {firebase} from '../config';
 import {FontAwesome} from 'react-native-vector-icons';
 import { useNavigation } from '@react-navigation/native';
+
 
 const Home = () => {
     const [notes,setNotes] =useState([]);
@@ -69,7 +70,7 @@ const Home = () => {
     }
     return (
         <View style={{flex:1}}>
-            <View style={Styles.container}>
+            <View style={Styles.formContainer}>
                 <TextInput
                 style={styles.input}
                 placeholder='Add new note'
@@ -81,11 +82,43 @@ const Home = () => {
 
                 />
                 <TouchableOpacity style={styles.button} onPress={addNote}>
-                    <Text>Add Note</Text>
+                    <Text style={styles.button}>Add Note</Text>
 
                 </TouchableOpacity>
 
             </View>
+            <FlatList
+            data={notes}
+            numColumns={1}
+            renderItem={({item})=>(
+                <View>
+                    <Pressable 
+                    style={styles.container}
+                    onPress={()=>navigation.navigate('Detail',{item})}
+                    
+                    >
+                        <FontAwesome
+                        name='trash-o'
+                        color='red'
+                        onPress={()=>deleteNotes(item)}
+                        style={styles.noteIcon}
+                        />
+                        <View style={styles.innerContainer}>
+                            <Text style={styles.itemHeading}>
+                                {item.heading[0].touppercase()+ item.heading.slice(1)}
+
+                            </Text>
+
+                        </View>
+
+                    </Pressable>
+                </View>
+
+            )}
+            
+            />
+
+            
 
         </View>
     )
