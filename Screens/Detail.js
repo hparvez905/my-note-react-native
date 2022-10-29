@@ -4,6 +4,7 @@ import {firebase} from '../config';
 import { useNavigation } from '@react-navigation/native';
 
 const Detail = ({route}) => {
+    const viewNote=route.params.item.heading;
     const notesRef =firebase.firestore().collection('notes');
     const  [textHeading, onChangeHeadingText] =useState(route.params.item.name);
     const navigation =useNavigation();
@@ -23,6 +24,8 @@ const Detail = ({route}) => {
     }
     return (
         <View style={styles.container}>
+             <Text>NoteDetails:</Text>
+            <Text style={styles.viewText}>{viewNote}</Text>
             <TextInput
             style={styles.textField}
             onChangeText={onChangeHeadingText}
@@ -71,5 +74,16 @@ const styles =StyleSheet.create({
         elevation:10,
         backgroundColor:'#0de065',
 
+    },
+    viewText:{
+        marginTop:10,
+        
+        marginBottom:50,
+        height:100,
+        fontSize:15,
+        fontWeight:'bold',
+        marginLeft:15,
+        alignItems:'center',
+        justifyContent:'center',
     }
 })
