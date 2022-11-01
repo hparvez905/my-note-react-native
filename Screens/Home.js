@@ -70,25 +70,8 @@ const Home = () => {
     }
     return (
         <View style={{flex:1}}>
-            <View style={styles.formContainer}>
-                <TextInput
-                style={styles.input}
-                placeholder='Add new note'
-                placeholderTextColor='#aaaaaa'
-                onChangeText={(heading)=>setAddData(heading)}
-                value={addData}
-                underlineColorAndroid='transparent'
-                autoCapitalize='none'
-
-                />
-                <TouchableOpacity style={styles.floatingButton} onPress={addNote}>
-                    <Ionicons name="add-circle" size={50} color='red'
-                    />
-                    
-
-                </TouchableOpacity>
-
-            </View>
+            <View style={styles.box}></View>
+           
             <FlatList
             data={notes}
             numColumns={1}
@@ -119,9 +102,29 @@ const Home = () => {
             )}
             
             />
+             <View style={styles.formContainer}>
+                <TextInput
+                style={styles.input}
+                placeholder='Add new note'
+                placeholderTextColor='#aaaaaa'
+                onChangeText={(heading)=>setAddData(heading)}
+                value={addData}
+                underlineColorAndroid='transparent'
+                autoCapitalize='none'
+
+                />
+                <TouchableOpacity style={styles.floatingButton} onPress={addNote}>
+                    <Ionicons name="add-circle" size={50} color='red'
+                    />
+                    
+
+                </TouchableOpacity>
+
+            </View>
 
             
 
+       
         </View>
     )
  
@@ -158,6 +161,9 @@ const styles= StyleSheet.create({
         marginTop:50,
         alignItems:'center',
         justifyContent:'center'
+    },
+    box:{
+        marginTop:40
     },
     input:{
         height:48,
