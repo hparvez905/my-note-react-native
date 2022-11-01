@@ -24,7 +24,7 @@ const Detail = ({route}) => {
     }
     return (
         <View style={styles.container}>
-             <Text>NoteDetails:</Text>
+             <Text style={styles.viewTittle}>NoteDetails:</Text>
             <Text style={styles.viewText}>{viewNote}</Text>
             <TextInput
             style={styles.textField}
@@ -77,7 +77,7 @@ const styles =StyleSheet.create({
     },
     viewText:{
         marginTop:10,
-        
+        color:'white',
         marginBottom:50,
         height:100,
         fontSize:15,
@@ -85,5 +85,8 @@ const styles =StyleSheet.create({
         marginLeft:15,
         alignItems:'center',
         justifyContent:'center',
+    },
+    viewTittle:{
+        color:'white',
     }
 })

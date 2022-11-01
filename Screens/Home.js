@@ -1,4 +1,4 @@
-import { View, Text,FlatList,StyleSheet,TextInput,TouchableOpacity,Keyboard, Pressable } from 'react-native';
+import {View, Text,FlatList,StyleSheet,TextInput,TouchableOpacity,Keyboard, Pressable } from 'react-native';
 import React,{useState,useEffect} from 'react';
 import {firebase} from '../config';
 import {FontAwesome,Ionicons} from 'react-native-vector-icons';
@@ -70,7 +70,8 @@ const Home = () => {
     }
     return (
         <View style={{flex:1}}>
-            <View style={styles.box}></View>
+                   
+               <View style={styles.box}></View>
            
             <FlatList
             data={notes}
@@ -133,6 +134,8 @@ const Home = () => {
 export default Home;
 
 
+
+
 const styles= StyleSheet.create({
     container:{
         backgroundColor:'#e5e5e5',
@@ -179,4 +182,5 @@ const styles= StyleSheet.create({
         fontSize:25,
         marginLeft:14
     }
+   
 })
