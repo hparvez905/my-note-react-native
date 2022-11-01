@@ -57,7 +57,7 @@ const styles =StyleSheet.create({
     },
     textField:{
         marginBottom:10,
-        padding:10,
+        padding:20,
         fontSize:15,
         color:'#000000',
         backgroundColor:'#e0e0e0',
